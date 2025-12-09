@@ -24,7 +24,7 @@ def get_books(page_number):
 
     return books_data
 
-def save_to_cs(all_books):
+def save_to_csv(all_books):
     with open("books.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["Kitap Adı", "Fiyat(£)"])
@@ -37,4 +37,4 @@ if __name__ == "__main__":
         print(f"Sayfa {page_number} taranıyor... ")
         tum_kitaplar.extend(get_books(page_number))
         time.sleep(1)
-    save_to_cs(tum_kitaplar)
+    save_to_csv(tum_kitaplar)
